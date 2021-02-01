@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode development && webpack serve --mode development"
+    "start": "webpack --mode development && webpack serve --mode development",
+    "build": "webpack --mode development"
   },
   "author": "Zach Osman",
   "license": "MIT",
