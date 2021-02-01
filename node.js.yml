@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: all
   pull_request:
-    branches: [ master ]
+    branches: all
 
 jobs:
   build:
@@ -28,7 +28,7 @@ jobs:
     - run: |
           for d in */
           do
-              ( cd "$d" && npm i && npm build )
+              ( cd "$d" && npm i && npm run build )
           done
 
     - name: Github Pages
