@@ -20,6 +20,7 @@ class MyScene extends Phaser.Scene {
     radius: number
     greenfill: number;
     redfill: number;
+    text: Phaser.GameObjects.Text;
     
     constructor() {
         super(null);
@@ -27,6 +28,7 @@ class MyScene extends Phaser.Scene {
         this.radius = 5000;
         this.greenfill = 0;
         this.redfill = 0;
+        this.text = null;
     }
     
     preload() {
@@ -91,11 +93,13 @@ class MyScene extends Phaser.Scene {
     
         });
 
+        this.text = this.add.text(0,0, "hello", { fontFamily: 'Georgia'});
+
     }
     
     update() {
 
-      
+      this.text.text = "Greenfill: " + this.greenfill + "  Redfill: " + this.redfill;
     }
 }
 
