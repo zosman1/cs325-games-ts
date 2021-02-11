@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Hello! Amaze!</title>
+<title>Escape The Darkness</title>
 <style>
 body
 {
@@ -19,72 +19,109 @@ body
 <body>
 <div id="game"></div>
 <div id="readme">
-<h2>Your game title</h2>
+<h2>Escape The Darkness</h2>
 
 <ul>
 <li><strong>Originality:</strong>
-What is original about your game?
+While the concept of running away from the dark is not really new, i really haven't seen anything like this before.
+It's similar to one of those games where you need to beat enemys for x time in order to get "extracted" to saftey.
+But of course, it doesn't really play in that way.
 </li>
 
 <li><strong>Technical Merit:</strong>
-What is interesting about your game technology?
+The map is actually two maps, one overlayed on the other to create the illusion of a "light"
+The grabble chemicals despawns when it's "poured" into the beaker, and spawns a new one back in the drawer.
+There are two game loops, one to update the ui and one to update the game variables, this allows for faster and slightly more efficient rendering. 
+All images and music and drawn myself, and composed by myself.
+
 </li>
 
 <li><strong>Prototype Postmortem:</strong>
 What did you learn from this prototype?
 What was the easiest or hardest part of making it?
+I learned that phaser is pretty nice. However, the way I had to implement the "light" was
+incredibly annoying and extremely frustrating to implement.
+I learned that I can prototype simple ideas rather quickly in phaser, and that making sure code is clean is an important thing to do from the start of the project.
 </li>
 
 <li><strong>Prototype Assets:</strong>
-Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
-<ul>
-<li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
-</ul>
+All assets were created myself with my limited artistic ability, using GIMP
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
-Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
-</li>
+
+    The following are two examples I was heavily influenced by: 
+
+    http://phaser.io/examples/v3/view/input/dragging/drag-time-threshold
+    https://blog.ourcade.co/posts/2020/phaser-3-object-reveal-flashlight-spotlight-magic-lens/</li>
 
 <li><strong>High Concept:</strong>
-A one-sentence summary of your game.
+Escape the Darkness, survive two minutes to win.
 </li>
 
 <li><strong>Theme:</strong>
-State which of the Storymatic themes you used.
+Chemist is what I was most influenced by
 </li>
 
 <li><strong>Mandated Variety:</strong>
 State which input, randomness, genre, and play style you used in this prototype.
+Input: Mouse
+randomness: deterministic
+playstyle:  Achiever (as the game is not easy to beat)
+Genre: survival game
 </li>
 
 <li><strong>Prototype Goal:</strong>
-What game mechanic is this prototype evaluating?
+The mechanic is a simple "dragging as fast as you can" type game. I decided to go with something mechnically simple for my first game so I could get a better idea of how phaser works.
 </li>
 
 <li><strong>Player Experience Goals:</strong>
-What experience do you want players to have when playing your game?
+I want players to be slightly frustated at first, and have to figure out just how they can beat this game.
+On the second or third playthrough I'd like the player to be able to beat the game.
 </li>
 
 <li><strong>Gameplay:</strong>
-A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+
+<div>
+
+   A paragraph describing the actions the player can perform,
+ the system dynamics, and the core mechanic. 
+ Include a concise explanation of the prototype’s inputs 
+ and their expected effects (how to play). 
+ You can also describe game play that is not in the prototype.
+  You may include mock-up images for parts of the game not in the prototype.
+
+</div> 
+  The only input is that the player can only drag red and green chemicals to the beaker in the middle of the table.
+  The core mechanic is that you want to keep creating light by mixing "green" and "red" chemicals.
+  If you run out of either green or red in your beaker, then the light will start fading.
+  If the light fades completely then "the Darkness takes you" and you lose the game.
+
 </li>
 
 <li><strong>Strategies:</strong>
-What player strategies do you expect will be effective at playing this game?
-</li>
+I expect people to very quickly drag back and forth one chemical till it's almost full then the other.</li>
 
 <li><strong>Story/Setting/Premise:</strong>
-A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+A paragraph about the world your game is set in and who the characters are.
+ What makes the game world and its occupants unique and interesting? 
+ Do the tokens represent something? If the game has a backstory, mention it here.
+  If the game is abstract, then say so.
 How will the dramatic tension interact with the gameplay tension?
+
+The game is set in a world where you're the last scientist in your lab, something is lurking in the dark.
+You start frantically mixing chemicals while you hear and see weird lights coming from the ever closing in darkness.
+You mix the right chemicals and are able to create light to keep yourself alive. 
+If you can suvive for two minutes then a rescue team can get to you, can you do it? 
+
 </li>
 
 <li><strong>Target Audience:</strong>
-A single sentence that describes the demographic you're trying to reach.
+The target audience is people that enjoy a short and challanging game, it requires little skill, but it does require some effort. 
 </li>
 
 <li><strong>Play Time:</strong>
-How long does your game take to play?
+The game takes two minutes to complete, however expecting you'd fail the first few attempts, likely around 4 minutes.
 </li>
 
 </ul>
