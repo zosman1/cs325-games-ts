@@ -64,7 +64,7 @@ class MyScene extends Phaser.Scene {
 		this.cover = this.add.image(0, 0, 'map').setOrigin(0).setScale(.5);
         this.cover.setTint(0x002c49)
         
-        this.music = this.sound.add('main', {loop: true, volume: .5});
+        this.music = this.sound.add('main', {loop: true, volume: .05});
         this.music.play();
 
 		const width = this.cover.width
