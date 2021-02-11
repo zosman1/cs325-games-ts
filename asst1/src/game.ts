@@ -27,6 +27,7 @@ class MyScene extends Phaser.Scene {
     renderTexture: Phaser.GameObjects.RenderTexture;
     gameover: boolean;
     textHelper: Phaser.GameObjects.Text;
+    music: Phaser.Sound.BaseSound;
     
     constructor() {
         super(null);
@@ -36,6 +37,7 @@ class MyScene extends Phaser.Scene {
         this.redfill = 3;
         this.text = null;
         this.gameover = false;
+        this.music = null;
     }
     
     preload() {
@@ -43,6 +45,7 @@ class MyScene extends Phaser.Scene {
         this.load.image( 'map', 'assets/map.png' );
         this.load.image( 'greenbottle', "assets/greenbottle.png");
         this.load.image( 'redbottle', "assets/redbottle.png")
+        this.load.audio( 'main', "assets/mk4.mp3")
     }
     
     spawnGreen(){
@@ -59,7 +62,10 @@ class MyScene extends Phaser.Scene {
     create() {
 		const reveal = this.add.image(0, 0, 'map').setOrigin(0).setScale(.5);
 		this.cover = this.add.image(0, 0, 'map').setOrigin(0).setScale(.5);
-		this.cover.setTint(0x002c49)
+        this.cover.setTint(0x002c49)
+        
+        this.music = this.sound.add('main', {loop: true});
+        this.music.play();
 
 		const width = this.cover.width
 		const height = this.cover.height
@@ -181,6 +187,7 @@ class MyScene extends Phaser.Scene {
     
     update() {
         if(this.gameover){
+            this.music.stop();
             return
         }
         const greenBar = this.add.graphics();
