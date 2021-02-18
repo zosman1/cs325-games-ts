@@ -24,15 +24,28 @@ body
 <ul>
 <li><strong>Originality:</strong>
 What is original about your game?
+
+The game plays slightly like breakout except it has multiple balls, forcing the player to think more than one move ahead.
+
 </li>
 
 <li><strong>Technical Merit:</strong>
 What is interesting about your game technology?
+
+I was able to add 100 balls into the renderer without it lagging.
+To detect if a ball went into the bottom of the screen, the original 
+way I was planning is to loop through all 100 balls but doing this on 
+every frame update might have been too laggy, instead I was able to 
+reduce it to looping through the 10 balls that might be "active" at the time
+thus saving cpu cycles and render time.
 </li>
 
 <li><strong>Prototype Postmortem:</strong>
 What did you learn from this prototype?
 What was the easiest or hardest part of making it?
+
+I learned that handling multiple sprites at once is not too easy in phaser.
+The hardest part was figuring out a way to not loop through all the balls to detect if one went past the boundaries.
 </li>
 
 <li><strong>Prototype Assets:</strong>
