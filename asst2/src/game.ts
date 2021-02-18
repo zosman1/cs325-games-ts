@@ -24,13 +24,16 @@ class MyScene extends Phaser.Scene {
     speed: number;
     ballnum: number;
     gameOver: boolean;
+    cursors: Phaser.Types.Input.Keyboard.CursorKeys;
+    timer: Phaser.GameObjects.Text;
+    gameTime: number;
     
     constructor() {
         super(null);
         
         // this.bouncy = null;
         this.horiz = 400;
-        this.speed = 30;
+        this.speed = 20;
         this.ballnum = 0;
         this.gameOver = false;
     }
@@ -47,11 +50,16 @@ class MyScene extends Phaser.Scene {
     
     create() {
 
+    this.cursors = this.input.keyboard.createCursorKeys();
+
     const map = this.add.image(0, 0, 'map').setOrigin(0).setScale(.5);
 
 
-    this.input.keyboard.on('keydown-RIGHT', () => this.moveLeft());
-    this.input.keyboard.on('keydown-LEFT', () => this.moveRight());
+    
+    this.timer = this.add.text(650, 100, "Timer: 0:00", {fontSize: "30px"});
+    this.gameTime = 0;
+    // this.input.keyboard.on('keydown-RIGHT', () => this.moveLeft());
+    // this.input.keyboard.on('keydown-LEFT', () => this.moveRight());
 
 
     
@@ -68,7 +76,7 @@ class MyScene extends Phaser.Scene {
     // this.balls
 
     this.paddle = this.physics.add.image(400, 400, 'paddle').setImmovable().setScale(.3);
-
+    
     
     this.balls = [];
     for(let i = 0; i < 100; i++){
@@ -80,6 +88,11 @@ class MyScene extends Phaser.Scene {
     }
 
     setInterval(() => this.releaseBalls(), 1400);
+    setInterval(() => this.updateTimer(), 100);
+    const introtext = this.add.text(0,0, "Keep Earths Last Oasis Alive for 20 seconds!\nProtect our water supply from the poisonous red balls", { fontFamily: "Georgia", fontSize: "30px"})
+    setTimeout(() => {introtext.destroy()}, 1000)
+    // setTimeout(() => {this.winGame()}, 3000);
+    setTimeout(() => {this.winGame()}, 20000);
     //  = this.physics.add.image(400, 350, 'ball').setCollideWorldBounds(true).setBounce(1).setScale(.3);
     // this.ball.setData('onPaddle', true);
 
@@ -114,15 +127,20 @@ class MyScene extends Phaser.Scene {
     }
 
     moveLeft(){
-        console.warn('hi')
-        this.horiz += this.speed;
+        this.horiz -= this.speed;
         this.paddle.x = Phaser.Math.Clamp(this.horiz, 52, 748);
     }
     
     moveRight(){
-        console.warn('hi')
-        this.horiz -= this.speed;
+        this.horiz += this.speed;
         this.paddle.x = Phaser.Math.Clamp(this.horiz, 52, 748);
+    }
+
+    updateTimer(){
+        if(this.gameOver) return;
+        this.gameTime += .1
+        this.timer.text = `Timer: ${this.gameTime}`
+
     }
 
 
@@ -178,8 +196,16 @@ class MyScene extends Phaser.Scene {
             ball.setVelocityX(2 + Math.random() * 8);
         }
     }
-    loseGame(){
+    loseGame() {
+        if(this.gameOver) return;
+        this.add.text(0, 0, "Earth's Last Oasis was destroyed!\nTry again by refreshing the page", { fontFamily: 'Georgia', fontSize: "40px" });
+        this.gameOver = true;
         //game is over, shiiiiit
+    }
+    winGame() {
+        if(this.gameOver) return;
+        this.add.text(0, 0, "You saved humanities last fresh water\n source! Congratulations!", { fontFamily: 'Georgia', fontSize: "40px" });
+        this.gameOver = true;
     }
 
     releaseBalls(){
@@ -205,7 +231,14 @@ class MyScene extends Phaser.Scene {
     }
 
     update() {
+    // this.input.keyboard.on('keydown-RIGHT', () => this.moveLeft());
+    // this.input.keyboard.on('keydown-LEFT', () => this.moveRight());
 
+        if(this.cursors.right.isDown){
+            this.moveRight();
+        } else if (this.cursors.left.isDown) {
+            this.moveLeft();
+        }
 
         // Accelerate the 'logo' sprite towards the cursor,
         // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
@@ -218,6 +251,13 @@ class MyScene extends Phaser.Scene {
         //     // this.resetBall();
         //     this.loseGame();
         // }
+        // if(this.ball)
+        for(let i = this.ballnum - 5; i < this.ballnum + 5; i++){
+            if(!this.balls[i]) continue;
+            if(this.balls[i].y > 600){
+                this.loseGame();
+            }
+        }
     }
 }
 
