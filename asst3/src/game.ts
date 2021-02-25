@@ -155,7 +155,8 @@ class MyScene extends Phaser.Scene {
                     // delete pirateship
                 }
             });
-        } else {
+        }
+        if (this.direction == "right") {
             this.pirates.forEach((pirateship, i) => {
                 console.warn(pirateship.x)
                 if(pirateship.x > 700 && pirateship.x < 1000){
