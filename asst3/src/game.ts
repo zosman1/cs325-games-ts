@@ -88,7 +88,7 @@ class MyScene extends Phaser.Scene {
             let left = Math.random() > .5
             this.pirates.push(this.physics.add.sprite(left ? 100 : 1200, 400, 'pirate').setFlipX(left).setVelocityX(left ? 40: -40));
 
-        }, 4000)
+        }, 2000)
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         let style = { font: "25px Verdana", fill: "#FFFFFF", align: "center" };
