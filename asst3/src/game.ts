@@ -97,7 +97,7 @@ class MyScene extends Phaser.Scene {
         this.text.setOrigin( 0.5, 0.0 );
 
 
-        setTimeout(() => {this.winGame()}, 20000);
+        setTimeout(() => {this.winGame()}, 60000);
         setInterval(() => this.updateTimer(), 100);
 
         this.timer = this.add.text(1050, 30, "Timer: 0.0", {fontSize:"20px"});
