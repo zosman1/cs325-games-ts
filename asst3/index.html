@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Boreas Game</title>
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Boreas, god of the north wind</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+What is original about your game?
+
+I don't think i've ever seen a game where you blow away incoming pirate ships by controlling the wind. 
+The mechanic of controlling an elemental force is not a new idea. but the way i've done it is new.
+</li>
+
+<li><strong>Technical Merit:</strong>
+What is interesting about your game technology?
+
+Pirate ships spawn at a regular interval, having somewhat accurate "hitboxes", which i had to implement manually and were very tricky.
+All assets are made by hand
+
+For this week i used no real starter code, the only reference I used was the documentation.
+
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+What did you learn from this prototype?
+I learned doing hitboxes manually are really annoying, and in the future i need to figure out a better way to do that.
+
+What was the easiest or hardest part of making it?
+Getting the hitboxes to look somewhat accurate was very time consuming and very hard to guess.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+
+
+All assets are created by me.
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+
+I used no example for reference, only the phaser documentation.
+
+</li>
+
+<li><strong>High Concept:</strong>
+A one-sentence summary of your game.
+
+Save your treasure from the pirates!
+</li>
+
+<li><strong>Theme:</strong>
+State which of the Storymatic themes you used.
+
+Pirates!
+</li>
+
+<li><strong>Mandated Variety:</strong>
+State which input, randomness, genre, and play style you used in this prototype.
+
+Indirect Input, Deterministic, Director, Overhead
+</li>
+
+<li><strong>Prototype Goal:</strong>
+What game mechanic is this prototype evaluating?
+
+The goal here was to expirment with indirect input. While i think i did that rather well, i'm not a big fan of indirect input in games.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+What experience do you want players to have when playing your game?
+
+The goal for this week was somewhat changed, it's a far more laid back and relaxed game with a very casual type of playstyle.
+</li>
+
+<li><strong>Gameplay:</strong>
+A paragraph describing the actions the player can perform, 
+the system dynamics, and the core mechanic. 
+Include a concise explanation of the prototype’s inputs and their expected effects 
+(how to play). You can also describe game play that is not in the prototype. 
+You may include mock-up images for parts of the game not in the prototype.
+
+
+The player only has two actions, to blow wind to the right, and to blow wind to the left. Using this the player can blow approaching pirate ships away. The other mechanics i'd want to add is ships coming from the top and the bottom.
+Doing this required many more drawings and my skills are not quite good enought to draw those, so i wasn't able to get the top and bottom ships into the final version.
+
+In the future this could be improved by creating a cooldown period where you can't switch what direction the wind is blowing.
+</li>
+
+
+<li><strong>Strategies:</strong>
+What player strategies do you expect will be effective at playing this game?
+
+I imagine the player quickly switching between blowing wind left and right.
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+A paragraph about the world your game is set in and who the characters are.
+ What makes the game world and its occupants unique and interesting? 
+ Do the tokens represent something? If the game has a backstory, mention it here. 
+ If the game is abstract, then say so.
+
+
+How will the dramatic tension interact with the gameplay tension?
+
+
+
+
+</li>
+
+<li><strong>Target Audience:</strong>
+A single sentence that describes the demographic you're trying to reach.
+
+A casual audience that wants a pretty easy game that requires little stratagy.
+</li>
+
+<li><strong>Play Time:</strong>
+How long does your game take to play?
+
+20 Seconds
+</li>
+
+</ul>
+</div>
+
+<!-- main.js must come at the end since it expects the HTML to have been created. -->
+<script src="dist/bundle.js"  type="text/javascript"></script>
+</body>
+</html>
