@@ -239,7 +239,7 @@ const game = new Phaser.Game({
             gravity: {
                 y: 0.8
             },
-            debug: true,
+            debug: false,
             //@ts-ignore
             debugBodyColor: 0xffffff
         }
