@@ -38,6 +38,7 @@ class MyScene extends Phaser.Scene {
     balls: Phaser.Physics.Matter.Image[];
     score: number;
     text: Phaser.GameObjects.Text;
+    trashes: Phaser.GameObjects.Image[];
 
 
     constructor() {
@@ -58,7 +59,7 @@ class MyScene extends Phaser.Scene {
     }
     
     preload() {
-        this.load.image('ball', 'assets/rocket.png');
+        this.load.image('ball', 'assets/ball.png');
         this.load.image('cannon', 'assets/Cannon.png');
         this.load.image('bin', 'assets/trash.png');
         this.load.image('map', 'assets/map.png');
@@ -92,10 +93,18 @@ class MyScene extends Phaser.Scene {
 
         const map = this.add.image(0, 0, 'map').setOrigin(0).setScale(.5);
 
+        this.trashes = [
+            this.add.image(50, 600, 'ball').setScale(.5),
+            this.add.image(50, 500, 'ball').setScale(.5),
+            this.add.image(50, 400, 'ball').setScale(.5),
+            this.add.image(50, 300, 'ball').setScale(.5),
+            this.add.image(50, 200, 'ball').setScale(.5)
+        ]
+
 
 
         this.text = this.add.text(50, 50, "Score: N", {fontSize: "30px"})
-        const temp_text = this.add.text(50, 100, "Get 5 trash balls into the garbage to win!", {fontSize: "30px"})
+        const temp_text = this.add.text(50, 100, "Get 5 trash bags into the garbage to win!", {fontSize: "30px"})
 
         setTimeout(() => {temp_text.destroy()}, 2000)
         // this.matter.world.setBounds();
@@ -134,6 +143,7 @@ class MyScene extends Phaser.Scene {
         this.input.keyboard.on('keydown-SPACE', () => {
             if(this.gameOver) return;
 
+            this.trashes.pop().destroy();
             let velo = 20;
             velo += this.cannonAngle / 10
             if(this.cannonTimeout) return;

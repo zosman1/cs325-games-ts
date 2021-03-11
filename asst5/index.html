@@ -24,67 +24,144 @@ body
 <ul>
 <li><strong>Originality:</strong>
 What is original about your game?
+
+My game is a special type of shooting game where you are disposing of trash bags in a fun way. 
+My entire art is hand drawn, all my code is my own, and i've seen no other game where you fire a trash bag out of a cannon.
 </li>
 
 <li><strong>Technical Merit:</strong>
 What is interesting about your game technology?
+
+
+I used no example, and wrote the entire thing myself. 
+This was especially difficult and took me quite a while 
+just because of how phasers matter engine functions. 
+
+
+This was especially hard because the higher dumpsters required more velocity where as if we used that 
+velocity on the lower ones we would miss. After whiteboarding the solution for a while i decided to add a slight 
+velocity modifier based on the angle of cannon. This modifier took a lot tweaking for it to feel somewhat natural.
+
+
+Additionally, the phaser3 matter object has no "accelerate forward" function. It required you to pass in the new 
+X and Y velocity. I was able to solve this using some physics I had learned in high school but JS has no build in 
+sin and cos functions that rely on degrees instead of radiens, which required me to make custom function wrappers.
+
+
+I also needed to develop a way to stop the player from shooting all the bags at once. I was able to create a setTimeout that makes the player wait one second before they're able to shoot another trash bag out of the cannon.
 </li>
 
 <li><strong>Prototype Postmortem:</strong>
 What did you learn from this prototype?
 What was the easiest or hardest part of making it?
+
+I learned a bit more about Phasers Matter engine. And by far that was definitely the hardest part of this project.
+There really was no easy part, but because i didn't use an example i could format everything nicely so that was nice.
 </li>
 
 <li><strong>Prototype Assets:</strong>
 Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
-<ul>
-<li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
-</ul>
+
+
+All Assets are created by hand.
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
 Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+
+I used no example, the only reference i used was the phaser3 documentation.
 </li>
 
 <li><strong>High Concept:</strong>
 A one-sentence summary of your game.
+
+
+Shoot trash bags into a ever moving dumpster
 </li>
 
 <li><strong>Theme:</strong>
 State which of the Storymatic themes you used.
+
+Cleaning
 </li>
 
 <li><strong>Mandated Variety:</strong>
 State which input, randomness, genre, and play style you used in this prototype.
+
+Direct. 
+
+Competitor.
+
+Lot of randomness
+
+Shooter.
 </li>
 
 <li><strong>Prototype Goal:</strong>
 What game mechanic is this prototype evaluating?
+
+Shooting 
 </li>
 
 <li><strong>Player Experience Goals:</strong>
 What experience do you want players to have when playing your game?
+
+I want players to have a fun casual time shooting garbage bags out of a cannon
 </li>
 
 <li><strong>Gameplay:</strong>
-A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+A paragraph describing the actions the player can perform,
+ the system dynamics, and the core mechanic.
+  Include a concise explanation of the prototype’s inputs and their 
+  expected effects (how to play). 
+  You can also describe game play that is not in the prototype.
+   You may include mock-up images for parts of the game not in the prototype.
+
+
+The player can tilt the cannon left and right, and shoot the cannon. 
+The ejected trash bag will then follow a path out of the cannon and hopefully make it into the dumpster.
+This trash bag will have a theoretical downward accelation of 7.848 m/s to somewhat effectively simulate gravity.
+The player is expected to aim the cannon slightly above the dumpster in an effort to put the trash bag into it.
+
+
+
 </li>
 
 <li><strong>Strategies:</strong>
 What player strategies do you expect will be effective at playing this game?
+
+
+I expect players to "calculate" a curve that the trash bag might take to get into the dumpster.
+With the physics being on the somewhat realistic side i expect players to figure out how the trash bags
+behave after fired and compensate on their next playthrough. 
+
+Alternatively, players could just aim slightly above the trash bin and if they're lucky the might hit it.
 </li>
 
 <li><strong>Story/Setting/Premise:</strong>
-A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+A paragraph about the world your game is set in and who the characters are. 
+What makes the game world and its occupants unique and interesting? 
+Do the tokens represent something? If the game has a backstory, mention it here.
+ If the game is abstract, then say so.
 How will the dramatic tension interact with the gameplay tension?
+
+
+The player has 5 trash bags built up from a party last night. They're trying to clean up their house but the dumpster is magically floating.
+The player being an avid cannon enthusiast chuckled and brought their cannon to their doorstep. Which is where we find our player now.
+This game does not really have any dramatic tension, it is to be a simple and fun shooting game to be played casually.
 </li>
 
 <li><strong>Target Audience:</strong>
 A single sentence that describes the demographic you're trying to reach.
+
+This game is targeted at a casual gamer that's looking for an easy game to master.
 </li>
 
 <li><strong>Play Time:</strong>
 How long does your game take to play?
+
+The game should take less than a minute to both learn how to play, and to win, but that depends on the player.
+
 </li>
 
 </ul>
