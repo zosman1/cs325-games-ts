@@ -90,6 +90,8 @@ class MyScene extends Phaser.Scene {
     
     create() {
 
+        this.input.keyboard.addCapture('SPACE');
+
 
         const map = this.add.image(0, 0, 'map').setOrigin(0).setScale(.5);
 
