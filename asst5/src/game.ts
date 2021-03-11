@@ -145,10 +145,10 @@ class MyScene extends Phaser.Scene {
         this.input.keyboard.on('keydown-SPACE', () => {
             if(this.gameOver) return;
 
-            this.trashes.pop().destroy();
             let velo = 20;
             velo += this.cannonAngle / 10
             if(this.cannonTimeout) return;
+            this.trashes.pop().destroy();
             setTimeout(() => {this.cannonTimeout = false}, 1000);
             this.cannonTimeout = true;
             const temp_ball = this.matter.add.image(150, 700, 'ball');
