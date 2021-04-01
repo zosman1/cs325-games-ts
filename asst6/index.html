@@ -19,77 +19,119 @@ body
 <body>
 <div id="game"></div>
 <div id="readme">
-<h2>The legend of the Apple</h2>
+<h2>The legend of Stone</h2>
 
 <ul>
 <li><strong>Originality:</strong>
 What is original about your game?
 
-The player is completely free to do what they want, they can just explore the map, or they can collect apples.
+
+The player is able to explore a relatively large map, while being incentivised to score points, the player is completely free to do whatever they wish.
 </li>
 
 <li><strong>Technical Merit:</strong>
 What is interesting about your game technology?
 
 
+I wrote the entire game by hand, no examples, no stock images, no stock music. The game also has multiple high object physics groups.
+ Because of this I was able to have the player collide with each individual object on the map. 
+It was also nontrivial to have some of these objects (the apples) interact with the player in a different way than just normal collision,
+i was able to implement a callback that allowed a function to be called in the local scope when any apple interacts withe the player, that allows a special
+function handler to be run that allows me to increment the score and remove that specific apple that the player colided with.
 
+
+ Additionaly, I was able to implement this rather big map without resorting to tiling the map,
+ when reading the documentation, I found a camera zoom paramater and was able to use this to simulate the same experirence. 
+
+ The next problem that arose from this was having a score that stayed in the players view, 
+ I got stuck on this for a while but was able to have a dynamic text object that moves alongside 
+ the player.
 </li>
 
 <li><strong>Prototype Postmortem:</strong>
 What did you learn from this prototype?
 What was the easiest or hardest part of making it?
+
+The hardest part of this prototype was figuring out how I could get the player to move around the map without tiling.
+This took a lot of searching through the phaser documenation and eventually I discovered a camera zoom and a camera follow method
+that allowed me to simulate the behavior I wanted in the game view.
+
 </li>
 
 <li><strong>Prototype Assets:</strong>
 Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
-<ul>
-<li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
-</ul>
+
+All music, sprites, music was made by me.
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
 Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+
+All code was written by me. I started from just the function stubs for create, update, and preload.
 </li>
 
 <li><strong>High Concept:</strong>
 A one-sentence summary of your game.
+
+
+A long asleep rock wakes up, and must smash all the apples to prevent animals from wandering into their woods.
 </li>
 
-<li><strong>Theme:</strong>
-State which of the Storymatic themes you used.
-</li>
-
-<li><strong>Mandated Variety:</strong>
-State which input, randomness, genre, and play style you used in this prototype.
-</li>
 
 <li><strong>Prototype Goal:</strong>
 What game mechanic is this prototype evaluating?
+
+
+
+We are evaulating the mechanic of wandering around a forest, exploring, and slowly discovering and collecting points.
 </li>
 
 <li><strong>Player Experience Goals:</strong>
 What experience do you want players to have when playing your game?
+
+
+I want the player to have a slow gameplay experience, and casually be able to explore a handcrafted world.
 </li>
 
 <li><strong>Gameplay:</strong>
-A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic.
+ Include a concise explanation of the prototype’s inputs and their expected effects (how to play).
+  You can also describe game play that is not in the prototype.
+  You may include mock-up images for parts of the game not in the prototype.
+
+
+The player can move their character right, left, up, and down, using the keyboards arrow keys.
+However, the player cannot move through trees, or walls, or any other obstacles. 
+The player explores the map, slowly discovering apples that are around the map, and the players goal is to smash all these apples.
 </li>
 
 <li><strong>Strategies:</strong>
 What player strategies do you expect will be effective at playing this game?
+
+I expect the player to eventually learn what the map looks like and learn the most efficient path to win the game. However, for the first few times, I expect the player to slowly explore the world.
 </li>
 
 <li><strong>Story/Setting/Premise:</strong>
-A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting?
+ Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
 How will the dramatic tension interact with the gameplay tension?
+
+
+Story: A loud noise awakens this rock that has been asleep for centuries, on waking the player finds many apples on the floor that can attract intruders into the hidden forest, 
+the rock knows that the apples must disapper in order to keep the scilence. As such, the rock(the player) sets out to smash all the apples.
 </li>
 
 <li><strong>Target Audience:</strong>
 A single sentence that describes the demographic you're trying to reach.
+
+
+The casual gamer that wants to explore a relatively sized handdrawn map.
 </li>
 
 <li><strong>Play Time:</strong>
 How long does your game take to play?
+
+~2 minutes
 </li>
 
 </ul>
