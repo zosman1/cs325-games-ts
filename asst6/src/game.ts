@@ -143,6 +143,8 @@ class MyScene extends Phaser.Scene {
             this.ScoreText = this.add.text(this.player.x, this.player.y, "You Won!", {fontSize: "50px"})
             this.music.stop();
             this.gameOver = true;
+            this.player.setVelocityY(0);
+            this.player.setVelocityX(0);
             return;
 
         }
