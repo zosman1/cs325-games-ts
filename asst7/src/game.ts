@@ -42,6 +42,7 @@ class MyScene extends Phaser.Scene {
         this.load.image('wallh', 'assets/wallh.png');
         this.load.image('apple', 'assets/apple.png')
         this.load.image('tree', 'assets/tree.png')
+        this.load.image('tree2', 'assets/tree2.png')
         this.load.image('oasis', 'assets/oasis.png')
         // this.image
         this.load.audio('mk6', 'assets/mk6.1.mp3')
@@ -85,15 +86,15 @@ class MyScene extends Phaser.Scene {
 
         //hardcoded tree creating
         this.createPhysicsObject(trees, 'tree', 300, 400, .5)
-        this.createPhysicsObject(trees, 'tree', 500, 500, .5)
+        this.createPhysicsObject(trees, 'tree2', 500, 500, .5)
         this.createPhysicsObject(trees, 'tree', 200, 400, .5)
         this.createPhysicsObject(trees, 'tree', 300, 550, .5)
-        this.createPhysicsObject(trees, 'tree', 500, 200, .5)
+        this.createPhysicsObject(trees, 'tree2', 500, 200, .5)
         this.createPhysicsObject(trees, 'tree', 700, 80, .5)
         this.createPhysicsObject(trees, 'tree', 100, 100, .5)
         this.createPhysicsObject(trees, 'tree', 200, 200, .5)
 
-        this.createPhysicsObject(trees, 'tree', 700, 300, .5)
+        this.createPhysicsObject(trees, 'tree2', 700, 300, .5)
         this.createPhysicsObject(trees, 'tree', 700, 530, .5)
         // this.createPhysicsObject(trees, 'tree', 700, 200, .5)
         // this.createPhysicsObject(trees, 'tree', 700, 200, .5)
