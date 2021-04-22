@@ -24,67 +24,97 @@ body
 <ul>
 <li><strong>Originality:</strong>
 What is original about your game?
+
+I incorperate stealth and difficult gameplay into an interesting mechanic where timing, and accurate player movment is required.
 </li>
 
 <li><strong>Technical Merit:</strong>
 What is interesting about your game technology?
+
+All assets, and code were written by me. Guards use real velocity and real colisions, and do not have their patterns degrade as time goes on.
 </li>
 
 <li><strong>Prototype Postmortem:</strong>
 What did you learn from this prototype?
 What was the easiest or hardest part of making it?
+
+
+
+I learned how to setup muliple colision handlers, and how to create a non-trivial map from in game objects.
+The hardest part was positioning all the guards, walls, and the player in the correct spots for the game to function.
+Additionally, getting the guards movmeent to look correct was rather trickey as there was no way for me to get the guards velocity on collision, so i had to inject a new property into the guard object.
 </li>
 
 <li><strong>Prototype Assets:</strong>
 Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
-<ul>
-<li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
-</ul>
+
+All assets were made by me.
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
 Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+
+
+I used no code that was not my own, however i did copy a helper function i wrote in the previous digital assignment
 </li>
 
 <li><strong>High Concept:</strong>
 A one-sentence summary of your game.
+
+
+Steal the apple of eden!
 </li>
 
-<li><strong>Theme:</strong>
-State which of the Storymatic themes you used.
-</li>
-
-<li><strong>Mandated Variety:</strong>
-State which input, randomness, genre, and play style you used in this prototype.
-</li>
 
 <li><strong>Prototype Goal:</strong>
 What game mechanic is this prototype evaluating?
+
+
+Stealth and quick movments to evade guards and reach your objective
 </li>
 
 <li><strong>Player Experience Goals:</strong>
 What experience do you want players to have when playing your game?
+
+I want players to learn the guards movments even though they cant fully see their path, and learn how to get past each challange. 
 </li>
 
 <li><strong>Gameplay:</strong>
 A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+
+
+The player can move up down left and right, the only limiting factor being the player cannot move through walls.
+When a player has a guard "see" them they lose and have to start over.
 </li>
 
 <li><strong>Strategies:</strong>
 What player strategies do you expect will be effective at playing this game?
+
+
+I imagine once players learn how fast the guards move, where they all are, and how to avoid them, the game will become simple.
+I expect players to spend a few minutes trying to understand the guards movment then making it past them
 </li>
 
 <li><strong>Story/Setting/Premise:</strong>
 A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
 How will the dramatic tension interact with the gameplay tension?
+
+
+You are IGNUS, long ago the sages foretold about the "Apple of Eden", a relic left on earth from the times of the gods. The relic is told to have powers far beyond human imagination. Your team has been tasked with tracking it down and finding it, they tracked it to this wearhouse, get past the guards and retrive the apple!
 </li>
 
 <li><strong>Target Audience:</strong>
 A single sentence that describes the demographic you're trying to reach.
+
+
+A gamer that is looking for a challanging and somewhat rewarding experience. 
 </li>
 
 <li><strong>Play Time:</strong>
 How long does your game take to play?
+
+
+About three minutes, but it's very player dependant.
 </li>
 
 </ul>
