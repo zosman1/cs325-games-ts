@@ -33,8 +33,8 @@ class MyScene extends Phaser.Scene {
         this.add.text(this.player.x - 120, this.player.y - 90, `Capture the \napple of eden.\ndon't let the\nguards see you!`, {fontSize: "20px"})
 
         //setup cameras
-        // this.cameras.main.setZoom(3);
-        // this.cameras.main.startFollow(this.player, false, .3, .3)
+        this.cameras.main.setZoom(3);
+        this.cameras.main.startFollow(this.player, false, .3, .3)
         this.cameras.main.setBackgroundColor("#333333");
 
         //initiate cursors for movement and stuff later
@@ -190,7 +190,7 @@ class MyScene extends Phaser.Scene {
 
     handleMovement(){
         //handleMovement
-        const speed = 300
+        const speed = 250
         if(this.cursors.up.isDown || this.cursors.down.isDown){
             this.player.setVelocityY(this.cursors.up.isDown? -speed: speed);
         }
