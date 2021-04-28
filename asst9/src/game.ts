@@ -33,8 +33,8 @@ class MyScene extends Phaser.Scene {
         this.add.text(this.player.x - 120, this.player.y - 90, `Capture the \napple of eden.\ndon't let the\nguards see you!`, {fontSize: "20px"})
 
         //setup cameras
-        this.cameras.main.setZoom(3);
-        this.cameras.main.startFollow(this.player, false, .3, .3)
+        // this.cameras.main.setZoom(3);
+        // this.cameras.main.startFollow(this.player, false, .3, .3)
         this.cameras.main.setBackgroundColor("#333333");
 
         //initiate cursors for movement and stuff later
@@ -74,14 +74,29 @@ class MyScene extends Phaser.Scene {
         this.createPhysicsObject(walls, 'wallv', 600, 50, .3)
         this.createPhysicsObject(walls, 'wallv', 600, 150, .3)
 
-        this.createPhysicsObject(walls, 'wallh', 550, 200, .3)
-        this.createPhysicsObject(walls, 'wallh', 450, 200, .3)
-        this.createPhysicsObject(walls, 'wallh', 350, 400, .3)
-
         this.createPhysicsObject(walls, 'wallv', 400, 350, .3)
         this.createPhysicsObject(walls, 'wallh', 450, 300, .3)
         this.createPhysicsObject(walls, 'wallh', 550, 300, .3)
-        this.createPhysicsObject(walls, 'wallv', 600, 250, .3)
+        this.createPhysicsObject(walls, 'wallv', 450, 250, .3)
+
+
+        this.createPhysicsObject(walls, 'wallh', 550, 200, .3)
+        this.createPhysicsObject(walls, 'wallh', 450, 200, .3)
+        this.createPhysicsObject(walls, 'wallv', 300, 450, .3)
+        this.createPhysicsObject(walls, 'wallh', 350, 500, .3)
+        this.createPhysicsObject(walls, 'wallh', 450, 500, .3)
+        this.createPhysicsObject(walls, 'wallh', 550, 500, .3)
+        this.createPhysicsObject(walls, 'wallh', 650, 500, .3)
+        this.createPhysicsObject(walls, 'wallv', 700, 450, .3)
+        this.createPhysicsObject(walls, 'wallv', 700, 350, .3)
+        this.createPhysicsObject(walls, 'wallv', 700, 250, .3)
+        this.createPhysicsObject(walls, 'wallh', 650, 200, .3)
+
+
+
+
+
+
 
 
 
@@ -96,10 +111,17 @@ class MyScene extends Phaser.Scene {
 
         this.createPhysicsObject(guards, 'guard', 350, 350, .2, 0, -100)
 
+        this.createPhysicsObject(guards, 'guard', 350, 350, .2, 0, -100)
+        this.createPhysicsObject(guards, 'guard', 600, 370, .15, 0, -100)
+        // this.createPhysicsObject(guards, 'guard', 530, 360, .2, 0, -100)
+        this.createPhysicsObject(guards, 'guard', 480, 350, .15, 0, -150)
+
+
+
 
 
         //create win
-        const win = this.physics.add.image(550, 250, 'win').setScale(.5).setImmovable(true)
+        const win = this.physics.add.image(500, 250, 'win').setScale(.5).setImmovable(true)
 
         // guards.children.get()
         // const guards = []
@@ -109,6 +131,7 @@ class MyScene extends Phaser.Scene {
 
         this.physics.add.collider(this.player, guards, (obj1, obj2) => {
             alert("game over")
+            this.gameOver = true;
         })
 
         //@ts-ignore
@@ -158,7 +181,10 @@ class MyScene extends Phaser.Scene {
     }
 
     update() {
-        if(this.gameOver) return;
+        if(this.gameOver){
+            this.player.setVelocity(0,0);
+            return;
+        }
         this.handleMovement();
     }
 
